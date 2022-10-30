@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "sqloxide"
-version = "0.1.26.dev"
-repository = "https://github.com/wseaton/sqloxide"
+version = "0.1.26.1"
+repository = "https://github.com/illumex-ai/sqloxide"
 license = "MIT"
 description = "Python bindings for sqlparser-rs"
-authors = ["Will Eaton <me@wseaton.com>"]
+authors = ["illumex"]
 build = "build.py"
 classifiers = [
     "Development Status :: 3 - Alpha",
