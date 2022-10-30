@@ -1,6 +1,6 @@
 [package]
 name = "sqloxide"
-version = "0.1.26.1"
+version = "0.2.26"
 authors = ["illumex"]
 edition = "2018"
 
