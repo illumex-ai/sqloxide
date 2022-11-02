@@ -16,5 +16,5 @@ version = "0.17.1"
 features = ["extension-module"]
 
 [dependencies.illumex-sqlparser]
-version = "0.26.1"
+version = "0.26.2"
 features = ["json_example"]
