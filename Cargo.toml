@@ -1,6 +1,6 @@
 [package]
 name = "sqloxide"
-version = "0.2.26"
+version = "0.2.27"
 authors = ["illumex"]
 edition = "2018"
 
@@ -16,5 +16,5 @@ version = "0.17.1"
 features = ["extension-module"]
 
 [dependencies.illumex-sqlparser]
-version = "0.26.2"
+version = "0.27.1"
 features = ["json_example"]
