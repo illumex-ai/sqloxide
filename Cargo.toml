@@ -1,7 +1,7 @@
 [package]
 name = "sqloxide"
-version = "0.2.28"
-authors = ["illumex"]
+version = "0.1.36"
+authors = ["Will Eaton <me@wseaton.com>"]
 edition = "2018"
 
 [lib]
@@ -9,12 +9,13 @@ name = "sqloxide"
 crate-type = ["cdylib"]
 
 [dependencies]
-pythonize = "0.17"
+pythonize = "0.19"
+serde = "1.0.171"
 
 [dependencies.pyo3]
-version = "0.17.1"
+version = "0.19.1"
 features = ["extension-module"]
 
-[dependencies.illumex-sqlparser]
-version = "0.28.1"
-features = ["json_example"]
+[dependencies.sqlparser]
+version = "0.36.1"
+features = ["serde", "visitor"]

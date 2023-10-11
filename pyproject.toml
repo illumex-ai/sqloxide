@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "sqloxide"
-version = "0.2.28"
-repository = "https://github.com/illumex-ai/sqloxide"
+version = "0.1.37"
+repository = "https://github.com/wseaton/sqloxide"
 license = "MIT"
 description = "Python bindings for sqlparser-rs"
 authors = ["illumex"]
