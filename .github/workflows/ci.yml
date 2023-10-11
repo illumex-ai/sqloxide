@@ -93,7 +93,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/') && matrix.os != 'ubuntu-latest'
         with:
-          files: dist/sqloxide*.whl
+          files: io/dist/sqloxide*.whl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -136,33 +136,9 @@ jobs:
           name: wheels
           path: io/dist/*${{ matrix.tag }}_${{ matrix.arch }}.whl
 
-  source-build:
-    runs-on: ubuntu-latest
-    needs: lint
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build source distribution
-        run: |
-          pip install -U setuptools wheel setuptools-rust
-          python setup.py sdist
-      - name: Archive source distribution
-        uses: actions/upload-artifact@v2
-        with:
-          name: wheels
-          path: dist/*
-
-  publish:
-    runs-on: ubuntu-latest
-    needs: [manylinux-build, native-build, source-build]
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: wheels
-          path: dist/
-
-      - name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@master
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: io/dist/*manylinux2014*.whl
         env:
