@@ -93,7 +93,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/') && matrix.os != 'ubuntu-latest'
         with:
-          files: io/dist/sqloxide*.whl
+          files: dist/sqloxide*.whl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
